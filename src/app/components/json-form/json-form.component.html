@@ -1,12 +1,24 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div *ngFor="let control of jsonFormData?.controls">
-        <label>{{ control.label }}</label>
-        <input
-            *ngIf="(control.type == 'text') || (control.type == 'radio') || (control.type == 'checkbox') || (control.type == 'textarea')"
-            [type]="control.type" [formControlName]="control.name" [value]="control.value">
-        <select *ngIf="(control.type == 'select')" [formControlName]="control.name">
-            <option *ngFor="let s of control?.selectOptions">  {{ s.text }} </option>
-        </select>
+
+        <mat-form-field *ngIf="(control.type == 'text')" appearance="fill">
+            <mat-label> {{ control.label }} </mat-label>
+            <input [formControlName]="control.name" matInput [value]="control.value">
+        </mat-form-field>
+
+        <mat-form-field *ngIf="(control.type == 'select')" appearance="fill">
+            <mat-label> {{ control.label }} </mat-label>
+            <mat-select [formControlName]="control.name">
+                <mat-option *ngFor="let city of control?.selectOptions" [value]="city.value">
+                    {{ city.text }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-checkbox *ngIf="(control.type == 'checkbox')"> {{ control.label }} </mat-checkbox>
+
+        <!-- TODO: Add possible input fields like text-area, radio buttons etc -->
+
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
 </form>

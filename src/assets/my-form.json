@@ -25,13 +25,6 @@
       "validators": {}
     },
     {
-      "name": "agreeTerms",
-      "label": "This is a checkbox?",
-      "value": "false",
-      "type": "checkbox",
-      "validators": {}
-    },
-    {
       "name": "size",
       "label": "",
       "value": "",
@@ -53,7 +46,7 @@
     },
     {
       "name": "selectCity",
-      "label": "Select cities from the list",
+      "label": "Select city",
       "value": "Chicago",
       "selectOptions": [
         {
@@ -74,6 +67,13 @@
         }
       ],
       "type": "select",
+      "validators": {}
+    },
+    {
+      "name": "agreeTerms",
+      "label": "I accept terms and conditions",
+      "value": "false",
+      "type": "checkbox",
       "validators": {}
     }
   ]
