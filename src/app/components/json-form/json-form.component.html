@@ -1,0 +1,12 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let control of jsonFormData?.controls">
+        <label>{{ control.label }}</label>
+        <input
+            *ngIf="(control.type == 'text') || (control.type == 'radio') || (control.type == 'checkbox') || (control.type == 'textarea')"
+            [type]="control.type" [formControlName]="control.name" [value]="control.value">
+        <select *ngIf="(control.type == 'select')" [formControlName]="control.name">
+            <option *ngFor="let s of control?.selectOptions">  {{ s.text }} </option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
+</form>
