@@ -5,6 +5,7 @@
       "label": "First name:",
       "value": "",
       "type": "text",
+      "showField": true,
       "validators": {
         "required": true,
         "minLength": 10
@@ -15,6 +16,7 @@
       "label": "Last name:",
       "value": "",
       "type": "text",
+      "showField": true,
       "validators": {}
     },
     {
@@ -22,26 +24,7 @@
       "label": "Comments",
       "value": "",
       "type": "textarea",
-      "validators": {}
-    },
-    {
-      "name": "size",
-      "label": "",
-      "value": "",
-      "type": "range",
-      "options": {
-        "min": "0",
-        "max": "100",
-        "step": "1",
-        "icon": "sunny"
-      },
-      "validators": {}
-    },
-    {
-      "name": "lightDark",
-      "label": "Do you like toggles?",
-      "value": "false",
-      "type": "radio",
+      "showField": false,
       "validators": {}
     },
     {
@@ -67,6 +50,7 @@
         }
       ],
       "type": "select",
+      "showField": true,
       "validators": {}
     },
     {
@@ -74,6 +58,7 @@
       "label": "I accept terms and conditions",
       "value": "false",
       "type": "checkbox",
+      "showField": true,
       "validators": {}
     }
   ]

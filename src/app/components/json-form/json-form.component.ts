@@ -27,6 +27,7 @@ interface JsonFormControls {
   label: string;
   value: string;
   type: string;
+  showField: boolean,
   options?: JsonFormControlOptions;
   selectOptions?: any;
   required: boolean;
